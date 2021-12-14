@@ -1,0 +1,941 @@
+/*
+Theme Name: Hamilton Child
+Theme URI: https://www.andersnoren.se/teman/hamilton-wordpress-theme/
+Template: hamilton
+Author: Anders Norén
+Author URI: https://www.andersnoren.se
+Description: Hamilton is a clean WordPress portfolio theme for creatives. It displays posts in a beautiful image grid that can be set to either two or three columns, which makes it a perfect fit for photographers, illustrators or graphic designers looking for a theme for their portfolio. It also features Block Editor/Gutenberg support, a dark mode, custom background color support, a resume page template, responsive design, Jetpack infinite scroll support, editor styling, and much more. Demo: https://andersnoren.se/themes/hamilton/
+Tags: blog,two-columns,three-columns,custom-menu,featured-images,threaded-comments,translation-ready,grid-layout,custom-background,custom-logo,editor-style,sticky-post,theme-options,portfolio,photography,block-styles,wide-blocks
+Version: 2.0.7.1638095560
+Updated: 2021-11-28 11:32:40
+
+*/
+
+/* typografier */
+@import url("https://use.typekit.net/idx3uai.css");
+@import url("https://use.typekit.net/idx3uai.css");
+
+/* farvepallette */
+:root {
+  --headerfooter: #9f5e73;
+  --hvid: #ffffff;
+  --gul: #f4e4ad;
+  --pink: #d7accc;
+  --orange: #ec7429;
+  --sort: #333333;
+  --blaa: #9ebde3;
+  --groen: #bcd7b3;
+}
+
+/* fjern unødvendige woocommerce knapper */
+.woocommerce a.button,
+.woocommerce .woocommerce-result-count,
+.woocommerce .woocommerce-ordering select,
+.posted_in {
+  display: none;
+}
+
+body {
+  z-index: -10;
+}
+
+h1 {
+  font-family: liebedoni-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: liebedoni-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: larger;
+}
+
+h3 {
+  font-family: liebedoni-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+/* header */
+.show-alt-nav .site-header {
+  background-color: var(--headerfooter);
+  align-items: center;
+}
+
+.alt-nav {
+  margin-left: -90px;
+}
+
+.section-inner {
+  max-width: none;
+}
+
+.wp-custom-logo .site-header {
+  padding: 10px;
+}
+
+.site-header {
+  width: 100%;
+}
+
+/* menu */
+.alt-nav li a {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: var(--hvid);
+  font-size: larger;
+}
+
+.alt-nav li a:hover {
+  text-decoration: underline;
+}
+
+.alt-nav-wrapper {
+  width: 100%;
+  margin-right: 10px;
+}
+
+/* styling af splashbillede */
+#splash {
+  background-color: var(--pink);
+  margin-top: -10vh;
+  z-index: 10;
+  height: 100vh;
+}
+
+#splash img {
+  width: 75%;
+  margin-left: 13%;
+}
+
+#nedtal {
+  margin-top: -15vh;
+  margin-bottom: 5vh;
+}
+
+#merchknap {
+  border-radius: 50%;
+  cursor: pointer;
+  border: dashed 5px var(--sort);
+  max-width: 13vw;
+  height: 13vw;
+}
+
+#splashknap {
+  margin-top: -50vh;
+  margin-left: 2vw;
+  border-radius: 50%;
+  cursor: pointer;
+  border: dashed 5px var(--sort);
+  max-width: 13vw;
+  height: 13vw;
+}
+
+#splashknaptekst a{
+  text-decoration: none;
+}
+
+#programknap {
+  display:flex; 
+ align-items: center;
+  margin-left: -5vw;
+  margin-top: -30vh;
+  border-radius: 50%;
+  cursor: pointer;
+  border: dashed 5px var(--sort);
+  max-width: 10vw;
+  height: 10vw;
+  z-index: 15;
+  background-color: var(--gul);
+  padding: 1vw;
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+  text-align: center;
+}
+
+/* VÆR MED SIDE STYLING */
+
+/* side skal løftes lidt */
+#vaermed{
+  margin-top: -10vw; 
+}
+
+.vaermedknap {
+  border-radius: 50%;
+  cursor: pointer;
+  border: dashed 5px var(--sort);
+  background-color: var(--gul);
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+  justify-content: space-evenly;
+  margin-left: 10vw; 
+  margin-right: 10vw; 
+height: 10vw; 
+padding-top: 4vw; 
+} 
+
+.vaermedknap a {
+  text-decoration: none;
+  display: flex; /* or inline-flex */
+  align-items: center; 
+  justify-content: center;
+}
+
+#programknap a {
+  text-decoration: none;
+}
+
+#splashknap p {
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 1vw;
+  padding-bottom: 3vw;
+  font-family: minion-pro, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: larger;
+  text-align: center;
+  max-width: 13vw;
+  height: 13vw;
+}
+
+#merchknap p {
+  padding-left: 3.5vw;
+  padding-right: 3.5vw;
+  padding-top: 1vw;
+  padding-bottom: 3vw;
+  font-family: minion-pro, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: larger;
+  text-align: center;
+  max-width: 13vw;
+  height: 13vw;
+}
+
+#splashknap:hover,
+#programknap:hover,
+.vaermedknap:hover,
+#merchknap:hover {
+  background-color: var(--orange);
+  text-decoration: none;
+  animation: pop_kf 0.2s 1 both;
+}
+
+/* lynlås element */
+#forsideopdeler {
+  margin-top: -7vh;
+  z-index: -10;
+}
+
+#forsideopdeler img {
+  margin-left: -5vw;
+  margin-top: -20vh;
+  max-width: 65vw;
+}
+
+#programboks {
+  border: solid 5px var(--sort);
+  z-index: 10;
+  background-color: var(--gul);
+  margin-left: 15vw;
+  margin-right: 1vw;
+  margin-top: -15vh;
+  height: 80%;
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+  padding-bottom: 10vh;
+}
+
+#dagensprogram {
+  padding-top: 5vh;
+  font-family: liebedoni-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wp-block-image.is-style-circle-mask img,
+.wp-block-image.is-style-rounded img {
+  width: 15vw;
+  height: 15vw;
+  cursor: pointer;
+}
+
+#forestillinger {
+  margin-top: -30vh;
+}
+
+#anmeldelser {
+  margin-top: -15vh;
+}
+
+#anmeldelser h2 {
+  padding-top: 10vh;
+}
+
+#forestillinger img:hover {
+  animation: pop_kf 0.2s 1 both;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image.is-resized > figcaption  {
+  color: var(--sort);
+  font-family: minion-pro, serif;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: -10vh;
+}
+
+#tilbage {margin-top: 3vw; }
+
+/* knap animation */
+@keyframes pop_kf {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.citat {
+  border: solid #333333 5px;
+  margin-right: 18vw;
+  margin-left: 18vw;
+  padding-right: 2vw;
+}
+
+.citatplads{
+  margin-bottom: 10vw; 
+}
+
+.citat p {
+  font-size: large;
+}
+
+.citat img {
+  margin-top: -2vw;
+  margin-bottom: -2vw;
+}
+
+.citat p,
+.site-footer p,
+.site-footer a {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-footer {
+  background-color: var(--headerfooter);
+  width: 100%;
+  height: 80vw; 
+  margin-top: -14vw;
+      position: absolute;
+  z-index: -10;
+}
+
+.site-footer h2 {
+  /* margin-top: -5vh; */
+  color: var(--hvid);
+}
+
+.site-footer p {
+  color: var(--hvid);
+  margin-bottom: 10vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  justify-content: space-around;
+  color: var(--hvid);
+  margin-bottom: 5vh;
+}
+
+/* sociale medier ikoner */
+#social {
+  background-color: var(--blaa);
+  padding: 0.5vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  border: solid var(--sort) 3px;
+  justify-content: center;
+}
+
+#social a {
+  text-decoration: none;
+  width: 3vw;
+  height: auto;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+#social img:hover {
+  animation: pop_kf 0.4s 1 both;
+  border: dashed var(--orange) 5px;
+  border-radius: 50%;
+}
+
+/* nyhedsbrev styling */
+.nyhedsbrev {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -10;
+  margin-bottom: 10vw;
+  margin-top: 0vw;
+}
+
+.entry-content .alignfull p {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+.wp-block-column li {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+  line-height: 1;
+}
+
+.stjerne {
+  background-image: url("https://kamillesvalgaard.com/kea/3sem/vildskud/wp-content/themes/hamilton-child/baggrunds-element.png");
+  z-index: 10;
+  background-size: 200%;
+  opacity: 60%;
+}
+
+#sektion2 {
+  margin-bottom: 15vh;
+}
+
+#cookies,
+#fragt {
+  margin-top: -10vh;
+}
+
+/* landingpage styling */
+#landingpage,
+#tilmelddig {
+  margin-top: -5vh;
+}
+
+#landingimg {
+  margin-top: -15vh;
+}
+
+#landingpagep {
+  margin-top: -20vh;
+}
+
+#landingpagesol,
+#landinghat {
+  margin-top: -40vh;
+}
+#vises {
+  margin-top: -120vh;
+}
+#landingpagefun {
+  margin-top: 60vh;
+}
+
+#program,
+#merch {
+  margin-top: -5vh;
+}
+
+#programdage {
+  margin-top: -10vh;
+}
+
+#programimg {
+  margin-top: -40vh;
+  margin-bottom: 20vh;
+}
+
+#tak {
+  margin-top: -10vh;
+}
+
+.dag {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+#bagved,
+#kontakt {
+  margin-top: -5vh;
+  margin-bottom: 20vh;
+}
+
+/* kontakt side send knap */
+.send{
+  border-radius: 50%;
+border: dashed 3px var(--sort);
+margin-top: 10vw;
+padding-top: 2vw; 
+padding-bottom: 2vw; 
+padding-right: 0.5vw;   
+padding-left: 0.5vw; 
+text-decoration: none;
+}
+
+.send:hover{
+background-color: #ec7429;
+}
+
+.woocommerce .columns-4 {
+  background-color: var(--groen);
+  margin-bottom: 20vh;
+  margin-top: -35vh;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding: 10vw;
+}
+
+.woocommerce .columns-4 img {
+  border-radius: 50%;
+}
+
+/* nyhedsbrev signup */
+#email {
+  max-width: 20%;
+  text-align: center;
+  margin-left: 40%;
+  /* margin-top: -90vh; */
+  z-index: 10;
+  margin-bottom: 30vh;
+  margin-top: 20vw; 
+}
+
+#email p {
+  color: var(--sort);
+}
+
+#submit {
+  cursor: pointer;
+  margin-top: -30vh;
+}
+
+.submit{
+  /* background-color: #bdccd4; */
+  border-radius: 50%;
+  border: dashed 3px var(--sort);
+  margin-top: 10vw;
+  padding-top: 2vw; 
+  padding-bottom: 2vw; 
+  padding-right: 0.5vw;   
+  padding-left: 0.5vw; 
+  text-decoration: none;
+}
+
+.submit:hover{
+  background-color: #ec7429;
+}
+
+#email #submit {margin-top: 15vh;}
+
+button,
+.button,
+.faux-button,
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="a"] {
+  background-color: #bdccd4;
+  border-radius: 50%;
+  border: dashed 3px var(--sort);
+}
+
+button,
+.button,
+.faux-button,
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]:hover {
+  background-color: var(--orange);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  font-family: minion-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 2px solid margin-top: -2vw;
+  margin-bottom: -9vw;var(--sort);
+}
+
+/* program side stjerne element styling */
+#stjerne1,
+#stjerne2,
+#stjerne3,
+#stjerne4,
+#stjerne5,
+#stjerne6,
+#stjerne7 {
+  background-image: url(https://kamillesvalgaard.com/kea/3sem/vildskud/wp-content/themes/hamilton-child/baggrunds-element.png);
+  z-index: 10;
+  background-size: 40%;
+  opacity: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* collage skyder element styling */
+#skyder {
+  margin-top: 14vw; 
+  background-size: cover;
+}
+
+/* være med side styling */
+#somfrivillig,
+#frivilligp,
+#sompublikum,
+#publikump,
+#somskuespiller,
+#skuespillerp {
+  margin-top: -10vh;
+}
+
+/* checkout knap */
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: #bdccd4;
+  border-radius: 50%;
+  border: dashed 3px var(--sort);
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: #ec7429;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #d7accc;
+}
+
+#countdownbox{
+  margin-top: -2vw;
+}
+
+/* køb knap skal rykkes lidt */
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  background-color: #f4e4ad;
+  margin-left: 7vw;
+  margin-bottom: 40vw;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt a {color: #333333}
+
+.container p {
+  line-height: 1.5;
+  margin: 0 0 7.5em 0;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper{
+   margin-bottom: 17vw; 
+}
+
+.woocommerce-cart-form{
+  margin-top: 5vw; 
+}
+
+#kontaktboks{
+  margin-top: 3vw; 
+}
+
+
+#vaermedheading{
+margin-top:10vw; 
+}
+
+/* mobile view */
+@media only screen and (max-width: 375px) {
+  #splash img {
+    width: auto;
+    margin-left: -4vw;
+    margin-top: 26vw;
+        margin-bottom: 32vw;
+    height: auto;
+    max-width: 122vw;
+  }
+
+  #splash {    height: 156vw;
+    margin-top: -42vw;
+    height: 327vw;
+}
+
+  #splashknap {
+    margin: 22vw;
+    max-width: 49vw;
+    height: 48vw;
+    margin-top: -29vw;
+  }
+
+  #splashknap p{
+    padding-left: 0vw;
+    padding-right: 0vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    font-family: minion-pro, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: larger;
+    text-align: center;
+    max-width: 50vw;
+    height: 0vw;
+    margin-top: 14vw;
+  }
+
+  #programknap{
+    margin: 22vw;
+    max-width: 49vw;
+    height: 39vw;
+    margin-top: 17vw;  }
+
+  #programknap p{
+    padding-left: 0vw;
+    padding-right: 0vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    font-family: minion-pro, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: larger;
+    text-align: center;
+    max-width: 50vw;
+    height: 0vw;
+    margin-top: 14vw;
+    text-align: center; 
+}
+
+  .nav-toggle {
+    border: none;
+    margin-right: 5vw;
+  }
+
+  .site-nav.active {
+    background-color: #ec7429;
+    color: white;
+  }
+
+  #forsideopdeler img {
+    width: 10vw;
+  }
+
+  #programboks {
+    margin-top: -190vw;
+    margin-left: -7vw;
+    margin-right: -7vw;
+    height: 117vw;
+  }
+
+  #forstillinger_sektion{margin-top: 20vw; }
+
+  #forestilling {
+    margin-left: 0vw;
+  }
+
+  #forestilling img {
+    width: 100vw;
+    height: auto;
+  }
+
+  .wp-block-columns.citat {
+    margin-left: -12px;
+    padding-right: none;
+    width: 82vw;
+  }
+
+  .wp-block-columns.citat img {
+    width: 50vw;
+    height: auto;
+  }
+
+  .eb-countdown-zourt4p.eb-cd-wrapper .eb-cd-inner .box span.eb-cd-digit {
+    font-size: 33px;
+  }
+
+  /* footer styling */
+  .site-footer{
+    height: 156vw;
+    /* kurv footeren er for højt oppe */
+        margin-top: -42vw;}
+
+  .site-footer img {
+    display: none; 
+  }
+
+  .site-footer p {
+    margin-top: 0vw;
+  }
+
+  .site-footer a{
+    margin-top: -52vw; 
+  }
+
+  #email{
+    margin-top: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 71vw;
+  }
+
+  #email #submit {
+  margin-top: -5vw; 
+  }
+
+  #social{
+    height: 20vw; 
+  }
+
+  #social a{width: 15vw; height: auto; 
+  margin-top: 1vw; }
+
+  /* fjern skyder element på mobile view */
+  #skyder{
+    display: none; 
+  }
+
+  /* program baggrundsstjerner */
+  #stjerne1,
+  #stjerne2,
+  #stjerne3,
+  #stjerne4,
+  #stjerne5,
+  #stjerne6,
+  #stjerne7 {
+    background-size: 30%;
+  }
+
+  .dag h3{
+    display: none; 
+  }
+
+/* VÆR MED KNAPPER STYLING} */
+.vaermedkollone{
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.vaermedknap {
+  padding: 6vw;
+  margin-left: 27vw;
+  margin-right: 27vw;
+  margin-top: -3vw;
+  padding-top: 30vw;
+} 
+
+.vaermedknap a {
+  margin-top: -18vw;
+}
+
+  .medarbejder{
+    display: flex; 
+    align-items: center;
+  }
+
+  .medarbejder p{
+    text-align: center;
+  }
+
+  .wp-block-image.is-style-rounded img{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+/* HJÆLP */
+#site-content .submit{
+margin-top: 20vw; 
+}
+
+/* fjern billede på "vær med" side */
+.fjernbillede{display: none}
+
+/* fjern white space og flyt side op */
+.section-inner .section-inner {
+  width: 100%;
+  margin-top: -13vw;
+}
+
+/* h1 mindre på mobil view */
+h1 {font-size:  6vw}
+
+/* ryk program på så man kan se det */
+#programdage {
+margin-top: -32vw; 
+}
+
+#fname, #lname, #subject{
+  margin-bottom: -30vw; 
+}
+
+.entry-content > *:first-child {
+  margin-top: 105px;
+}
+
+.bagvildskud_collage_kasse{
+align-items: center;
+}
+
+.wp-block-image img{
+  max-width: 70vw;
+}
+
+.site-header .custom-logo{
+  max-height: 59px;
+}
+
+}
